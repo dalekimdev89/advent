@@ -20,20 +20,26 @@ fs.readFile('./puzzle.txt', (err, data) => {
       return acc;
    }, [[0, 0]]);
 
+   const answer = coordinates.reduce((acc, num ) => {
+      acc[[num]] = 1;
+      return acc;
+   }, {})
+
+   console.log(Objects.keys(answer).length)
    // console.log('coordinates', coordinates);
 
-   const dupes = coordinates.reduce((acc, num, i) => {
-      if (i+1 !== coordinates.length) {
-         for (var j=i+1; j<coordinates.length; j++) {
-            if (num.toString() === coordinates[j].toString()) {
-               acc.push(num);
-            }
-         }
-      }
-      return acc;
-   }, [])
+   // const dupes = coordinates.reduce((acc, num, i) => {
+   //    if (i+1 !== coordinates.length) {
+   //       for (var j=i+1; j<coordinates.length; j++) {
+   //          if (num.toString() === coordinates[j].toString()) {
+   //             acc.push(num);
+   //          }
+   //       }
+   //    }
+   //    return acc;
+   // }, [])
 
-   console.log(coordinates.length, dupes.length, coordinates.length-dupes.length)
+   // console.log(coordinates.length, dupes.length, coordinates.length-dupes.length)
 
    // console.log(coordinates)
 
@@ -50,5 +56,4 @@ fs.readFile('./puzzle.txt', (err, data) => {
    // }
 
    // console.log(coordinates.length, arr.length, coordinates.length - arr.length );
-
 })
