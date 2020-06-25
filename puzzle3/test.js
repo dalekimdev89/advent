@@ -1,11 +1,19 @@
+let obj1 = {
+    a: '1',
+    b: '2',
+    c: '3'
+};
 
-let arr = [[1,2],[3,4],[1,2],[3,4],[1,2],3,4];
-let obj = {};
+let obj2 = {
+    d: '1',
+    e: '2',
+    a: '1',
+    c: '3'
+};
 
-const newArr = arr.reduce((acc, num, i) => {
-    acc[[num]] = 1;
-    return acc;
-}, {})
+let merge = {
+    ...obj1,
+    ...obj2
+};
 
-console.log(newArr)
-console.log(Object.keys(newArr).length)
+console.log(merge)

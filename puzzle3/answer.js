@@ -25,7 +25,7 @@ fs.readFile('./puzzle.txt', (err, data) => {
       return acc;
    }, {})
 
-   console.log(Objects.keys(answer).length)
+   console.log(Object.keys(answer).length)
    // console.log('coordinates', coordinates);
 
    // const dupes = coordinates.reduce((acc, num, i) => {
